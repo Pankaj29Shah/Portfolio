@@ -1,0 +1,169 @@
+.experience {
+  background: var(--bg-primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experienceCard {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px var(--shadow-md);
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  border: none;
+  background: var(--card-bg);
+}
+
+.experienceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px var(--shadow-lg);
+}
+
+.cardHeader {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.jobTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.companyInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.company {
+  font-size: 18px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.separator {
+  color: var(--border-color);
+}
+
+.location {
+  font-size: 16px;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.duration {
+  font-size: 15px;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.responsibilities {
+  margin-bottom: 25px;
+}
+
+.responsibilitiesTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+}
+
+.responsibilityText {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.technologies {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid var(--border-color);
+}
+
+.techTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.techTag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .jobTitle {
+    font-size: 20px;
+  }
+
+  .company {
+    font-size: 16px;
+  }
+
+  .location {
+    font-size: 14px;
+  }
+
+  .companyInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .separator {
+    display: none;
+  }
+}
