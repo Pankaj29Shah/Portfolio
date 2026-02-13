@@ -25,9 +25,15 @@ jobs:
       - name: Build Next.js App
         run: npm run build
 
-      - name: Zip build output
+      - name: Prepare standalone build
         run: |
-          zip -r release.zip .next/standalone .next/static public
+          cp -r .next/static .next/standalone/.next/
+          cp -r public .next/standalone/
+
+      - name: Zip standalone build
+        run: |
+          cd .next/standalone
+          zip -r ../../release.zip .
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
