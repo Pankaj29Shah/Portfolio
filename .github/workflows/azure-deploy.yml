@@ -1,13 +1,18 @@
 name: Deploy portfolio
+
 on:
   push:
     branches:
       - master
+  workflow_dispatch:
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -22,7 +27,7 @@ jobs:
 
       - name: Zip build output
         run: |
-          zip -r release.zip .next node_modules package.json package-lock.json public
+          zip -r release.zip .next package.json package-lock.json public
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
