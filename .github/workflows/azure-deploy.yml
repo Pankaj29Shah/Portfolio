@@ -27,7 +27,7 @@ jobs:
 
       - name: Zip build output
         run: |
-          zip -r release.zip .next package.json package-lock.json public
+          zip -r release.zip .next/standalone .next/static public
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
