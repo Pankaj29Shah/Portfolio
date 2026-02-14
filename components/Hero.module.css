@@ -8,12 +8,15 @@
   overflow: hidden;
   background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
   transition: background 0.3s ease;
+  width: 100%;
+  max-width: 100%;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  padding: 0;
 }
 
 .content {
@@ -128,6 +131,7 @@
   margin-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
 .primaryButton {
@@ -263,6 +267,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .imageContent {
@@ -274,33 +279,44 @@
     margin: 0 auto;
   }
 
+  .scrollDown {
+    display: none;
+  }
+
   .name {
     font-size: 42px;
     text-align: center;
+    width: 100%;
   }
 
   .title {
     font-size: 22px;
     text-align: center;
+    justify-content: center;
+    width: 100%;
   }
 
   .tagline {
     font-size: 18px;
     text-align: center;
+    width: 100%;
   }
 
   .description {
     font-size: 15px;
     text-align: center;
+    width: 100%;
   }
 
   .greeting {
     justify-content: center;
+    width: 100%;
   }
 
   .stats {
     gap: 30px;
     justify-content: center;
+    width: 100%;
   }
 
   .statValue {
@@ -309,16 +325,28 @@
 
   .buttons {
     justify-content: center;
+    width: 100%;
+    display: flex;
   }
 
   .social {
     justify-content: center;
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
     padding: 80px 15px 40px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .content {
+    width: 100%;
   }
 
   .imageWrapper {
@@ -329,46 +357,104 @@
   .name {
     font-size: 36px;
     text-align: center;
+    width: 100%;
   }
 
   .title {
     font-size: 20px;
     text-align: center;
     justify-content: center;
+    width: 100%;
   }
 
   .tagline {
     text-align: center;
+    width: 100%;
   }
 
   .description {
     text-align: center;
+    width: 100%;
   }
 
   .greeting {
     font-size: 20px;
     justify-content: center;
+    width: 100%;
+  }
+
+  .textContent {
+    width: 100%;
+    align-items: stretch;
   }
 
   .buttons {
     flex-direction: column;
     width: 100%;
-  }
-
-  .buttons button {
-    width: 100%;
+    display: flex;
+    gap: 12px;
   }
 
   .stats {
     gap: 20px;
     justify-content: center;
-  }
-
-  .buttons {
-    justify-content: center;
+    width: 100%;
   }
 
   .social {
     justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding: 70px 10px 30px;
+  }
+
+  .content {
+    gap: 25px;
+  }
+
+  .imageWrapper {
+    max-width: 240px;
+  }
+
+  .name {
+    font-size: 30px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .greeting {
+    font-size: 18px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .stats {
+    gap: 15px;
+  }
+
+  .statValue {
+    font-size: 24px;
+  }
+
+  .statLabel {
+    font-size: 12px;
+  }
+
+  .socialIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 }

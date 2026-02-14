@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Button, Space } from 'antd';
+import { Button } from 'antd';
 import { DownloadOutlined, LinkedinOutlined, GithubOutlined, MailOutlined, DownOutlined } from '@ant-design/icons';
 import { personalInfo } from '@/lib/data';
 import Image from 'next/image';
@@ -95,10 +95,11 @@ const Hero = () => {
               </div>
             </div>
 
-            <Space size="large" className={styles.buttons}>
+            <div className={styles.buttons}>
               <Button
                 type="primary"
                 size="large"
+                block
                 icon={<MailOutlined />}
                 onClick={() => scrollToSection('#contact')}
                 className={styles.primaryButton}
@@ -107,13 +108,14 @@ const Hero = () => {
               </Button>
               <Button
                 size="large"
+                block
                 icon={<DownloadOutlined />}
                 onClick={handleResumeDownload}
                 loading={downloadingResume}
               >
                 Download Resume
               </Button>
-            </Space>
+            </div>
 
             <div className={styles.social}>
               <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
@@ -131,7 +133,7 @@ const Hero = () => {
           <div className={styles.imageContent}>
             <div className={styles.imageWrapper}>
               <Image
-                src="/images/profile.jpg"
+                src="/images/profile-optimized.jpg"
                 alt="Pankaj Shah - Full Stack Software Developer specializing in React, Node.js, and .NET Core"
                 width={400}
                 height={400}

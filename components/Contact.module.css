@@ -96,12 +96,16 @@
   height: 50px;
   border-radius: 50%;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  color: #ffffff !important;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 22px;
   transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  color: #ffffff !important;
 }
 
 :root[data-theme="dark"] .socialLink {

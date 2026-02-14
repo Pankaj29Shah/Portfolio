@@ -16,10 +16,8 @@ const PageLoader = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (!isLoading) return null;
-
   return (
-    <div className={styles.loaderOverlay}>
+    <div className={`${styles.loaderOverlay} ${!isLoading ? styles.hidden : ''}`}>
       <div className={styles.spinner}>
         <svg className={styles.ring} viewBox="0 0 100 100">
           <defs>
