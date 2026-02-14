@@ -57,7 +57,7 @@ export const experience = [
       "Engineered an efficient online form for automating employee information aggregation, boosting payroll preparation efficiency and saving approximately 8 hours",
       "Engineered 15+ custom features using C# to address complex payroll processing requirements, delivering each project ahead of schedule"
     ],
-    technologies: ["C#", "ASP.NET", "React", "Node.js", "MongoDB", "Microservices"]
+    technologies: ["C#", "ASP.NET", "React", "Node.js", "MongoDB", "Microservices", "Azure"]
   }
 ];
 

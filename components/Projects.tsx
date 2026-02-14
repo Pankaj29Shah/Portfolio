@@ -50,6 +50,7 @@ const Projects = () => {
                   <div className={styles.projectLinks}>
                     <Button
                       icon={<GithubOutlined />}
+                      disabled
                       href={project.github}
                       target="_blank"
                       className={styles.linkButton}
@@ -58,6 +59,7 @@ const Projects = () => {
                     </Button>
                     <Button
                       type="primary"
+                      disabled
                       icon={<LinkOutlined />}
                       href={project.demo}
                       target="_blank"

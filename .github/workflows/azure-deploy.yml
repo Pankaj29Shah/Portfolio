@@ -18,9 +18,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'
+          cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Next.js App
         run: npm run build
@@ -34,6 +35,14 @@ jobs:
         run: |
           cd .next/standalone
           zip -r ../../release.zip .
+
+      - name: Set Azure app settings
+        uses: azure/appservice-settings@v1
+        with:
+          app-name: ps-portfolio
+          app-settings-json: '[{"name":"SCM_DO_BUILD_DURING_DEPLOYMENT","value":"false"},{"name":"WEBSITE_RUN_FROM_PACKAGE","value":"1"}]'
+        env:
+          AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.AZURE_WEBAPP_PUBLISH }}
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
