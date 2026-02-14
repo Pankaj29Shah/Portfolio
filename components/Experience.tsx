@@ -37,8 +37,8 @@ const Experience = () => {
                 <h4 className={styles.responsibilitiesTitle}>Key Responsibilities & Achievements:</h4>
                 <Timeline
                   items={exp.responsibilities.map((resp, idx) => ({
-                    dot: <CheckCircleOutlined style={{ fontSize: '16px', color: '#667eea' }} />,
-                    children: <p className={styles.responsibilityText}>{resp}</p>
+                    icon: <CheckCircleOutlined style={{ fontSize: '16px', color: '#667eea' }} />,
+                    content: <p className={styles.responsibilityText}>{resp}</p>
                   }))}
                 />
               </div>

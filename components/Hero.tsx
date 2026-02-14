@@ -82,7 +82,7 @@ const Hero = () => {
 
             <div className={styles.stats}>
               <div className={styles.stat}>
-                <span className={styles.statValue}>2+</span>
+                <span className={styles.statValue}>3.3+</span>
                 <span className={styles.statLabel}>Years Exp</span>
               </div>
               <div className={styles.stat}>

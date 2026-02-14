@@ -14,18 +14,18 @@
 }
 
 :root[data-theme="dark"] {
-  --bg-primary: #1a1a2e;
-  --bg-secondary: #16213e;
-  --bg-gradient-start: #0f3460;
-  --bg-gradient-end: #16213e;
-  --text-primary: #e4e4e7;
-  --text-secondary: #a1a1aa;
-  --text-tertiary: #71717a;
-  --border-color: #27272a;
-  --shadow-sm: rgba(0, 0, 0, 0.3);
-  --shadow-md: rgba(0, 0, 0, 0.4);
-  --shadow-lg: rgba(0, 0, 0, 0.5);
-  --card-bg: #27272a;
+  --bg-primary: #0a0e27;
+  --bg-secondary: #151b35;
+  --bg-gradient-start: #1a1f3a;
+  --bg-gradient-end: #2d1b4e;
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-tertiary: #cbd5e1;
+  --border-color: #2d3748;
+  --shadow-sm: rgba(0, 0, 0, 0.5);
+  --shadow-md: rgba(0, 0, 0, 0.6);
+  --shadow-lg: rgba(0, 0, 0, 0.7);
+  --card-bg: #1a1f3a;
 }
 
 * {
@@ -200,4 +200,37 @@ body {
 .message.user .message-content {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
+}
+
+/* Ant Design Spin/Loader styles */
+.ant-spin-nested-loading > div > .ant-spin {
+  max-height: 100%;
+}
+
+.ant-spin-container {
+  position: relative;
+}
+
+.ant-spin-blur {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ant-spin-blur::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 10;
+}
+
+[data-theme="dark"] .ant-spin-blur::after {
+  background: #0f172a;
+  opacity: 0.6;
 }

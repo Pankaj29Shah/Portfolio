@@ -78,10 +78,12 @@ const About = () => {
                 <Statistic
                   title={stat.label}
                   value={stat.value}
-                  valueStyle={{
-                    color: '#667eea',
-                    fontWeight: 700,
-                    fontSize: '32px'
+                  styles={{
+                    value: {
+                      color: '#667eea',
+                      fontWeight: 700,
+                      fontSize: '32px'
+                    }
                   }}
                 />
               </Card>

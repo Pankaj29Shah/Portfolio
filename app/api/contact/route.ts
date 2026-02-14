@@ -42,8 +42,26 @@ export async function POST(request: NextRequest) {
     // Email to yourself (notification)
     const notificationEmail = {
       to: toEmail,
-      from: fromEmail,
-      subject: `Portfolio Contact: ${subject}`,
+      from: {
+        email: fromEmail,
+        name: 'Pankaj Shah Portfolio'
+      },
+      replyTo: email, // Allow direct reply to the sender
+      subject: `New Message from ${name} - ${subject}`,
+      text: `
+New Contact Form Submission
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+
+---
+This email was sent from your portfolio contact form.
+Reply directly to respond to ${name}.
+      `,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;">
           <div style="max-width: 600px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
@@ -62,6 +80,7 @@ export async function POST(request: NextRequest) {
 
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; color: #888; font-size: 12px;">
               <p>This email was sent from your portfolio contact form.</p>
+              <p>Reply directly to respond to ${name}.</p>
             </div>
           </div>
         </div>
@@ -71,8 +90,30 @@ export async function POST(request: NextRequest) {
     // Auto-reply to the sender
     const autoReplyEmail = {
       to: email,
-      from: fromEmail,
+      from: {
+        email: fromEmail,
+        name: 'Pankaj Shah'
+      },
+      replyTo: fromEmail,
       subject: 'Thank you for contacting Pankaj Shah',
+      text: `
+Hi ${name},
+
+Thank you for contacting me through my portfolio website. I've received your message and will get back to you as soon as possible.
+
+Your Message:
+Subject: ${subject}
+${message}
+
+I typically respond within 24-48 hours. In the meantime, feel free to check out my projects and connect with me on LinkedIn.
+
+Best regards,
+Pankaj Shah
+Full Stack Software Developer
+
+Email: pankajshah2941999@gmail.com
+LinkedIn: linkedin.com/in/ps29/
+      `,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;">
           <div style="max-width: 600px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">

@@ -87,6 +87,16 @@ const Navbar = () => {
                 <span>{item.label}</span>
               </a>
             ))}
+            <div className={styles.drawerDivider} />
+            <Button
+              type="text"
+              icon={theme === 'dark' ? <BulbFilled /> : <BulbOutlined />}
+              onClick={toggleTheme}
+              className={styles.drawerThemeToggle}
+              block
+            >
+              {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+            </Button>
           </div>
         </Drawer>
       </div>

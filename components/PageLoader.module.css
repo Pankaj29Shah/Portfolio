@@ -4,12 +4,17 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--bg-primary);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
   animation: fadeOut 0.6s ease forwards 1.4s;
+  transition: none;
+}
+
+[data-theme="dark"] .loaderOverlay {
+  background: #0a0e27;
 }
 
 @keyframes fadeOut {

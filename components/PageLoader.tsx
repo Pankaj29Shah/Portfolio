@@ -7,9 +7,11 @@ const PageLoader = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Wait for the CSS animation to fully complete
+    // Animation starts at 1400ms and runs for 600ms = 2000ms total
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1800);
+    }, 2100);
 
     return () => clearTimeout(timer);
   }, []);

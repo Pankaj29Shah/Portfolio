@@ -23,7 +23,7 @@ const Education = () => {
               </div>
               <Timeline
                 items={education.map((edu, index) => ({
-                  children: (
+                  content: (
                     <div className={styles.educationItem}>
                       <h4 className={styles.degree}>{edu.degree}</h4>
                       <p className={styles.institution}>{edu.institution}</p>

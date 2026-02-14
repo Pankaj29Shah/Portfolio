@@ -15,15 +15,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const initialTheme = prefersDark ? 'dark' : 'light';
-      setTheme(initialTheme);
-      document.documentElement.setAttribute('data-theme', initialTheme);
+    // Theme is already set by the blocking script in layout.tsx
+    // Just sync the React state with the actual theme
+    const currentTheme = document.documentElement.getAttribute('data-theme') as Theme;
+    if (currentTheme) {
+      setTheme(currentTheme);
     }
   }, []);
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Card, Form, Input, Button, message, Row, Col } from 'antd';
+import { Card, Form, Input, Button, App, Row, Col } from 'antd';
 import { MailOutlined, PhoneOutlined, EnvironmentOutlined, LinkedinOutlined, GithubOutlined, SendOutlined } from '@ant-design/icons';
 import { personalInfo } from '@/lib/data';
 import styles from './Contact.module.css';
@@ -9,6 +9,7 @@ import styles from './Contact.module.css';
 const Contact = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
+  const { message } = App.useApp();
 
   const onFinish = async (values: any) => {
     setLoading(true);

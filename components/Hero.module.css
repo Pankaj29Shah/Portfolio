@@ -154,10 +154,23 @@
   box-shadow: 0 2px 10px var(--shadow-sm);
 }
 
+:root[data-theme="dark"] .socialIcon {
+  color: #a5b4fc;
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
 .socialIcon:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
   color: #764ba2;
+}
+
+:root[data-theme="dark"] .socialIcon:hover {
+  color: #c4b5fd;
+  background: rgba(102, 126, 234, 0.2);
+  box-shadow: 0 5px 20px rgba(165, 180, 252, 0.4);
+  border-color: rgba(165, 180, 252, 0.5);
 }
 
 .imageContent {
@@ -246,12 +259,19 @@
     gap: 40px;
   }
 
+  .textContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .imageContent {
     order: -1;
   }
 
   .imageWrapper {
     max-width: 350px;
+    margin: 0 auto;
   }
 
   .name {
@@ -303,18 +323,31 @@
 
   .imageWrapper {
     max-width: 280px;
+    margin: 0 auto;
   }
 
   .name {
     font-size: 36px;
+    text-align: center;
   }
 
   .title {
     font-size: 20px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .tagline {
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
   }
 
   .greeting {
     font-size: 20px;
+    justify-content: center;
   }
 
   .buttons {
@@ -328,5 +361,14 @@
 
   .stats {
     gap: 20px;
+    justify-content: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .social {
+    justify-content: center;
   }
 }

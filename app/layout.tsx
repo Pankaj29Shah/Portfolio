@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { AntdRegistry } from '@ant-design/nextjs-registry';
-import { ConfigProvider } from 'antd';
 import { ThemeProvider } from '@/contexts/ThemeContext';
+import ClientLayout from '@/components/ClientLayout';
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -79,20 +78,6 @@ export const metadata: Metadata = {
   },
 };
 
-const theme = {
-  token: {
-    colorPrimary: '#667eea',
-    borderRadius: 8,
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial',
-  },
-  components: {
-    Button: {
-      controlHeight: 42,
-      fontSize: 16,
-    },
-  },
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -141,8 +126,19 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const theme = localStorage.getItem('theme') ||
+                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+              })();
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -150,14 +146,9 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
-          <AntdRegistry>
-            <ConfigProvider
-              theme={theme}
-              warning={{ strict: false }}
-            >
-              {children}
-            </ConfigProvider>
-          </AntdRegistry>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
         </ThemeProvider>
       </body>
     </html>
