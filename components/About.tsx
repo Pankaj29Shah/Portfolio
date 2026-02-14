@@ -79,7 +79,7 @@ const About = () => {
                   title={stat.label}
                   value={stat.value}
                   styles={{
-                    value: {
+                    content: {
                       color: '#667eea',
                       fontWeight: 700,
                       fontSize: '32px'
