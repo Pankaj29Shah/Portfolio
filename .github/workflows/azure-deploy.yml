@@ -1,9 +1,6 @@
 name: Deploy portfolio
 
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
 
 jobs:
@@ -13,6 +10,7 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        refs: main
 
       - name: Set up Node.js
         uses: actions/setup-node@v4

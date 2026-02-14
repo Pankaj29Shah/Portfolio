@@ -125,7 +125,7 @@ export const certifications = [
 ];
 
 export const stats = [
-  { value: "2+", label: "Years Experience" },
+  { value: "3.3+", label: "Years Experience" },
   { value: "25K+", label: "Users Served" },
   { value: "15+", label: "Projects Delivered" },
   { value: "40%", label: "Efficiency Boost" }
