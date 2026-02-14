@@ -99,7 +99,6 @@ const Hero = () => {
               <Button
                 type="primary"
                 size="large"
-                block
                 icon={<MailOutlined />}
                 onClick={() => scrollToSection('#contact')}
                 className={styles.primaryButton}
@@ -108,7 +107,6 @@ const Hero = () => {
               </Button>
               <Button
                 size="large"
-                block
                 icon={<DownloadOutlined />}
                 onClick={handleResumeDownload}
                 loading={downloadingResume}
