@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import sgMail from '@sendgrid/mail';
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,10 +22,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if email credentials are configured
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      console.error('Email credentials not configured');
-      // Return success anyway for demo purposes
+    // Check if SendGrid credentials are configured
+    if (!process.env.SENDGRID_API_KEY || !process.env.SENDGRID_FROM_EMAIL) {
+      console.error('SendGrid credentials not configured');
       return NextResponse.json(
         {
           message: 'Message received! (Email service not configured - check .env file)',
@@ -35,19 +34,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create transporter
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+    const fromEmail = process.env.SENDGRID_FROM_EMAIL;
+    const toEmail = process.env.EMAIL_TO || fromEmail;
 
     // Email to yourself (notification)
-    const mailOptionsToSelf = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_TO || process.env.EMAIL_USER,
+    const notificationEmail = {
+      to: toEmail,
+      from: fromEmail,
       subject: `Portfolio Contact: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;">
@@ -74,9 +69,9 @@ export async function POST(request: NextRequest) {
     };
 
     // Auto-reply to the sender
-    const mailOptionsToSender = {
-      from: process.env.EMAIL_USER,
+    const autoReplyEmail = {
       to: email,
+      from: fromEmail,
       subject: 'Thank you for contacting Pankaj Shah',
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;">
@@ -119,8 +114,8 @@ export async function POST(request: NextRequest) {
     };
 
     // Send both emails
-    await transporter.sendMail(mailOptionsToSelf);
-    await transporter.sendMail(mailOptionsToSender);
+    await sgMail.send(notificationEmail);
+    await sgMail.send(autoReplyEmail);
 
     return NextResponse.json(
       { message: 'Message sent successfully!' },
