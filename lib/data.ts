@@ -7,7 +7,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/ps29/",
   github: "https://github.com/pankajshah29",
   tagline: "Architecting scalable solutions and crafting seamless user experiences",
-  description: "A passionate Full Stack Developer with 2+ years of experience building production-ready applications. Specialized in React, Next.js, Node.js, and microservices architecture. Currently working at Capsitech IT Services, delivering innovative solutions for 25000+ users.",
+  description: "A passionate Full Stack Developer with 3.3+ years of experience building production-ready applications. Specialized in React, Next.js, Node.js, and microservices architecture. Currently working at Capsitech IT Services, delivering innovative solutions for 25000+ users.",
   resumeLink: "/PankajShah_Resume-v5.pdf",
 };
 
