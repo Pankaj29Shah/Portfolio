@@ -62,6 +62,9 @@ export const metadata: Metadata = {
     creator: "@pankajshah",
     images: ['/images/profile.jpg'],
   },
+  icons: {
+    icon: '/icon.svg',
+  },
   robots: {
     index: true,
     follow: true,
