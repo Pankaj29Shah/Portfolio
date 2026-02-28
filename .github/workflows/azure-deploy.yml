@@ -10,7 +10,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        refs: main
+        with:
+          ref: main
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
