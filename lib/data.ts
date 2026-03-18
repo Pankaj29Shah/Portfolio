@@ -46,7 +46,7 @@ export const skills = {
 
 export const experience = [
   {
-    title: "System Engineer (Full Stack Software Developer)",
+    title: "System Engineer L2 (Full Stack Software Developer)",
     company: "Capsitech IT Services Private Limited",
     location: "Jodhpur",
     duration: "September 2022 - Present",
@@ -62,6 +62,20 @@ export const experience = [
 ];
 
 export const projects = [
+  {
+    title: "Billing & Payment Collection System",
+    date: "February 2026",
+    description: "Full-stack billing application with role-based authentication, enabling service-based businesses to create invoices and collect payments online",
+    achievements: [
+      "Built role-based authentication with NextAuth/JWT for secure multi-user access",
+      "Integrated Cashfree Payment Gateway with webhook-based HMAC-SHA256 signature verification for real-time transaction tracking",
+      "Automated customer communication via WhatsApp Business API, sending payment links and bills directly to customers",
+      "Implemented server-side validation with Zod schemas, including GST calculation (CGST/SGST) and price verification"
+    ],
+    technologies: ["Next.js", "NextAuth", "Cashfree", "WhatsApp API", "Zod"],
+    github: "#",
+    demo: "#"
+  },
   {
     title: "Hallmarking Management System",
     date: "November 2024",
