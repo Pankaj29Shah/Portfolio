@@ -7,8 +7,8 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/ps29/",
   github: "https://github.com/pankajshah29",
   tagline: "Architecting scalable solutions and crafting seamless user experiences",
-  description: "A passionate Full Stack Developer with 3.3+ years of experience building production-ready applications. Specialized in React, Next.js, Node.js, and microservices architecture. Currently working at Capsitech IT Services, delivering innovative solutions for 25000+ users.",
-  resumeLink: "/PankajShah_Resume-v5.pdf",
+  description: "A passionate Full Stack Developer with 3.6+ years of experience building production-ready applications. Specialized in React, Next.js, Node.js, and microservices architecture. Currently working at Capsitech IT Services, delivering innovative solutions for 25000+ users.",
+  resumeLink: "/PankajShah_Resume-v6.pdf",
 };
 
 export const education = [
@@ -125,7 +125,7 @@ export const certifications = [
 ];
 
 export const stats = [
-  { value: "3.3+", label: "Years Experience" },
+  { value: "3.6+", label: "Years Experience" },
   { value: "25K+", label: "Users Served" },
   { value: "15+", label: "Projects Delivered" },
   { value: "40%", label: "Efficiency Boost" }
